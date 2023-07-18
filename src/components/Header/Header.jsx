@@ -10,14 +10,22 @@ const ModeSwitch = () => {
 
 const Header = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isJobsPage, setIsJobsPage] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
 
+    const checkJobsPage = () => {
+      setIsJobsPage(window.location.pathname.endsWith("/jobs"));
+    };
+
     // Add event listener to track window resize
     window.addEventListener("resize", handleResize);
+
+    // Check if URL ends with "/jobs" on component mount
+    checkJobsPage();
 
     // Initial check on component mount
     handleResize();
@@ -34,7 +42,7 @@ const Header = () => {
 
       <ModeSwitch />
 
-      {isMobile ? <MobileSearchForm /> : <DesktopSearchForm />}
+      {isJobsPage && (isMobile ? <MobileSearchForm /> : <DesktopSearchForm />)}
     </header>
   );
 };
