@@ -1,4 +1,9 @@
-const MobileSearchForm = () => {
+const MobileSearchForm = ({ setShowModal }) => {
+  const handleFilterButtonClick = (e) => {
+    e.preventDefault();
+    setShowModal(true);
+  };
+
   return (
     <form className="search-and-filter__mobile">
       <input type="text" placeholder="Filter by title…" />
@@ -6,6 +11,7 @@ const MobileSearchForm = () => {
       <button
         className="filter-btn"
         aria-label="Click button to see filter menu"
+        onClick={handleFilterButtonClick}
       ></button>
 
       <button
