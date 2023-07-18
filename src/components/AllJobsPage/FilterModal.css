@@ -1,0 +1,46 @@
+.filter-modal__container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4965355396270752);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  min-height: 100vh;
+  z-index: 100;
+}
+
+.filter-modal {
+  background: var(--background-component);
+  border-radius: 0.375rem;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1.5rem;
+  width: 87.2%;
+  max-width: 20.4375rem;
+}
+
+.filter-modal__input-container {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 0.0625rem solid rgba(110, 128, 152, 0.2);
+  margin-bottom: 1.5rem;
+}
+
+.filter-modal__input-container img {
+  display: block;
+  margin-right: 1rem;
+}
+
+.filter-modal .checkbox-container {
+  margin: 0 0 1.5rem 1.5rem;
+}
+
+.filter-modal .search-btn {
+  padding: 1rem 0;
+  width: 85.3211009174%;
+  margin: 0 auto;
+}
