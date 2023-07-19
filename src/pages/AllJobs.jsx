@@ -3,7 +3,7 @@ import JobCard from "../components/AllJobsPage/JobCard";
 
 const AllJobs = ({ showModal, setShowModal, jobsData }) => {
   const jobCards = jobsData.map((job) => {
-    return <JobCard key={job.id} job={job} />;
+    return <JobCard key={job._id} job={job} />;
   });
 
   return (
