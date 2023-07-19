@@ -1,0 +1,90 @@
+.login-page {
+  padding: 0 2rem;
+  margin-top: -5rem;
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--text-bold);
+  max-width: 25rem;
+  margin: 0 auto 2rem auto;
+}
+
+.login-form,
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 87.2%;
+  max-width: 21.875rem;
+  background-color: var(--background-component);
+  border-radius: 0.3125rem;
+  margin: 0 auto 4rem auto;
+  padding: 1.75rem 1.5rem;
+}
+
+.login-form label,
+.registration-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: var(--text-bold);
+  font-weight: 700;
+}
+
+.login-form input,
+.registration-form input {
+  font-weight: 400;
+}
+
+.login-btn,
+.register-btn {
+  padding: 0.6875rem 0;
+}
+
+.login-form span {
+  font-size: 0.75rem;
+  margin: 0 auto;
+}
+
+.register-link {
+  color: var(--text-blue);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+select {
+  color: var(--text-regular);
+  font-weight: 400;
+  cursor: pointer;
+}
+
+@media (min-width: 48rem) {
+  h1 {
+    max-width: 31.25rem;
+    font-size: 3rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .login-form {
+    max-width: 34.375rem;
+    padding: 2rem;
+  }
+
+  .login-form span {
+    font-size: 0.875rem;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 90rem) {
+  .login-page {
+    margin-top: -7rem;
+  }
+
+  h1 {
+    font-size: 3.25rem;
+    margin-bottom: 2.5rem;
+  }
+}
