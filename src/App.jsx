@@ -1,14 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header/Header";
 import Login from "./pages/Login";
 import AllJobs from "./pages/AllJobs";
 
-import jobsData from "./data.json";
+import { getAllJobs } from "./utils/api.js";
 
 const App = () => {
   const [showModal, setShowModal] = useState(false);
+  const [jobsData, setJobsData] = useState([]);
+
+  useEffect(() => {
+    getAllJobs().then((response) => setJobsData(response));
+  }, []);
 
   return (
     <main>
