@@ -39,8 +39,22 @@
   margin: 0 0 1.5rem 1.5rem;
 }
 
+.filter-modal .checkbox-container input:checked ~ .checkmark {
+  background-color: #5964e0;
+  background-image: url("../../assets/desktop/icon-check.svg");
+  background-size: 65%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .filter-modal .search-btn {
   padding: 1rem 0;
   width: 85.3211009174%;
   margin: 0 auto;
+}
+
+@media (min-width: 48rem) {
+  .filter-modal__container {
+    display: none;
+  }
 }
