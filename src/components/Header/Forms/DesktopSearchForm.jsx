@@ -56,7 +56,7 @@ const DesktopSearchForm = () => {
         <label className="checkbox-container">
           <input type="checkbox" />
           <span className="checkmark"></span>
-          {isTablet ? "Full Time" : "Full Time Only"}
+          Full Time
         </label>
 
         <button className="search-btn">Search</button>
