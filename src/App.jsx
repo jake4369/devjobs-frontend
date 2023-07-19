@@ -5,8 +5,11 @@ import Header from "./components/Header/Header";
 import Login from "./pages/Login";
 import AllJobs from "./pages/AllJobs";
 
+import jobsData from "./data.json";
+
 const App = () => {
   const [showModal, setShowModal] = useState(false);
+
   return (
     <main>
       <Header setShowModal={setShowModal} />
@@ -16,7 +19,11 @@ const App = () => {
         <Route
           path="/jobs"
           element={
-            <AllJobs showModal={showModal} setShowModal={setShowModal} />
+            <AllJobs
+              showModal={showModal}
+              setShowModal={setShowModal}
+              jobsData={jobsData}
+            />
           }
         />
       </Routes>
