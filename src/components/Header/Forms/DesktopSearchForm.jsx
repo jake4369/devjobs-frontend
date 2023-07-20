@@ -3,8 +3,13 @@ import { useEffect, useState } from "react";
 import searchIcon from "./../../../assets/desktop/icon-search.svg";
 import locationIcon from "./../../../assets/desktop/icon-location.svg";
 
-const DesktopSearchForm = () => {
+const DesktopSearchForm = ({ searchObject, setSearchObject }) => {
   const [isTablet, setIsTablet] = useState(true);
+  const [userSearch, setUserSearch] = useState({
+    search: "",
+    location: "",
+    contract: "",
+  });
 
   useEffect(() => {
     const handleResize = () => {
@@ -23,8 +28,29 @@ const DesktopSearchForm = () => {
     };
   }, []);
 
+  const handleChange = (e) => {
+    setUserSearch((prevState) => {
+      return {
+        ...prevState,
+        [e.target.name]: e.target.value,
+      };
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    setSearchObject(userSearch);
+
+    setUserSearch({
+      search: "",
+      location: "",
+      contract: "",
+    });
+  };
+
   return (
-    <form className="search-and-filter__desktop">
+    <form className="search-and-filter__desktop" onSubmit={handleSubmit}>
       <div className="input-container">
         <img src={searchIcon} alt="" className="search-icon" aria-disabled />
 
@@ -36,6 +62,9 @@ const DesktopSearchForm = () => {
               : "Filter by title, companies, expertise…"
           }
           aria-label="Filter by title, companies, expertise…"
+          name="search"
+          value={userSearch.search}
+          onChange={handleChange}
         />
       </div>
       <div className="filter-container">
@@ -50,6 +79,9 @@ const DesktopSearchForm = () => {
           type="text"
           placeholder="Filter by location..."
           aria-label="Filter by location..."
+          name="location"
+          value={userSearch.location}
+          onChange={handleChange}
         />
       </div>
       <div className="btn-container">
