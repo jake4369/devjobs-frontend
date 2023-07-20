@@ -6,7 +6,7 @@ const devjobsApi = axios.create({
 });
 
 // GET all jobs
-export const getAllJobs = async () => {
+export const getAllJobs = async ({ search, location, contract }) => {
   try {
     // Get the token from localStorage
     const token = localStorage.getItem("token");
@@ -17,7 +17,14 @@ export const getAllJobs = async () => {
       // Add other headers here if needed
     };
 
-    const response = await devjobsApi.get("/jobs", { headers });
+    let url;
+
+    url =
+      search || location
+        ? `/jobs?search=${search}&location=${location}`
+        : "/jobs";
+
+    const response = await devjobsApi.get(url, { headers });
 
     const jobsData = response.data.data.jobs;
 
