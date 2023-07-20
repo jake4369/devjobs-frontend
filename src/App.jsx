@@ -10,14 +10,23 @@ import { getAllJobs } from "./utils/api.js";
 const App = () => {
   const [showModal, setShowModal] = useState(false);
   const [jobsData, setJobsData] = useState([]);
+  const [searchObject, setSearchObject] = useState({
+    search: "",
+    location: "",
+    contract: "",
+  });
 
   useEffect(() => {
-    getAllJobs().then((response) => setJobsData(response));
-  }, []);
+    getAllJobs(searchObject).then((response) => setJobsData(response));
+  }, [searchObject]);
 
   return (
     <main>
-      <Header setShowModal={setShowModal} />
+      <Header
+        setShowModal={setShowModal}
+        searchObject={searchObject}
+        setSearchObject={setSearchObject}
+      />
 
       <Routes>
         <Route path="/" element={<Login />} />

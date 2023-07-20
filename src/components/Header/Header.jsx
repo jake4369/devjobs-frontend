@@ -8,7 +8,7 @@ const ModeSwitch = () => {
   return <div className="header__mode-switch__container">Mode</div>;
 };
 
-const Header = ({ setShowModal }) => {
+const Header = ({ setShowModal, searchObject, setSearchObject }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [isJobsPage, setIsJobsPage] = useState(false);
 
@@ -46,7 +46,10 @@ const Header = ({ setShowModal }) => {
         (isMobile ? (
           <MobileSearchForm setShowModal={setShowModal} />
         ) : (
-          <DesktopSearchForm />
+          <DesktopSearchForm
+            searchObject={searchObject}
+            setSearchObject={setSearchObject}
+          />
         ))}
     </header>
   );
