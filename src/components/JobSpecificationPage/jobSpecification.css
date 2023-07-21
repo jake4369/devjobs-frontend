@@ -1,0 +1,237 @@
+.specification-section {
+  width: 87.2%;
+  max-width: 20.4375rem;
+  position: absolute;
+  left: 50%;
+  margin: -7rem auto 4rem;
+  transform: translateX(-50%);
+}
+
+/* WEBSITE CARD */
+.website-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: var(--background-component);
+  padding: 3.0625rem 0 2rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0.375rem;
+}
+
+.website-card__company-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-bold);
+  margin-bottom: 0.8125rem;
+}
+
+.website-card__company-website {
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--span-text-regular);
+  margin-bottom: 1.6875rem;
+}
+
+.website-card__company-website-btn {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--link-btn-text);
+  padding: 1rem 1.25rem;
+  border-radius: 0.3125rem;
+  background: var(--background-main);
+}
+
+/* JOB REQUIREMENTS */
+.job-requirements {
+  padding: 2.5rem 1.5rem;
+  background-color: var(--background-component);
+  border-radius: 0.375rem;
+}
+
+.job-requirements__info-container {
+  margin-bottom: 0.6875rem;
+}
+
+.job-requirements__posted-at,
+.job-requirements__contract,
+.job-requirements__company-name {
+  color: var(--span-text-regular);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.job-requirements__posted-at,
+.oval-icon {
+  margin-right: 0.75rem;
+}
+
+.job-requirements__company-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-bold);
+  margin-bottom: 0.75rem;
+}
+
+.job-requirements__location {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-blue);
+  margin-bottom: 3.375rem;
+}
+
+.job-requirements__apply-btn {
+  padding: 1rem;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.625rem;
+}
+
+.job-requirements__description {
+  margin-bottom: 2.5rem;
+}
+
+.job-requirements__requirements-heading,
+.job-requirements__todo-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-bold);
+  margin-bottom: 1.75rem;
+}
+
+.job-requirements__requirements {
+  margin-bottom: 2rem;
+}
+
+li {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.625rem;
+  margin-bottom: 0.5rem;
+  padding-left: 2rem;
+}
+
+.job-requirements__requirements-list {
+  margin: 0 0 2rem 1rem;
+}
+
+.job-requirements__role-list {
+  margin: 0 0 0 1rem;
+}
+
+.job-requirements__requirements-list li::marker,
+.job-requirements__role-list li::marker {
+  color: var(--text-blue);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* ROLE */
+.job-requirements__role {
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 48rem) {
+  .specification-section {
+    width: 43.0625rem;
+    max-width: unset;
+    margin: -9.375rem auto 3.3125rem;
+  }
+
+  /* WEBSITE CARD */
+  .website-card {
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--background-component);
+    padding: 0 2.5rem 0 0;
+    margin-bottom: 2rem;
+    height: 8.75rem;
+  }
+
+  .website-card__img {
+    width: 8.75rem;
+    height: 8.75rem;
+    background: red;
+    border-radius: 0.375rem 0 0 0.375rem;
+    position: unset;
+    margin-right: 2.5rem;
+  }
+
+  .website-card__flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 72%;
+  }
+
+  .website-card__company-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .website-card__company-website {
+    margin-bottom: 0;
+  }
+
+  /* JOB REQUIREMENTS */
+  .job-requirements {
+    padding: 3rem;
+  }
+
+  .job-requirements__flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2.75rem;
+  }
+
+  .job-requirements__company-name {
+    font-size: 1.75rem;
+    margin-bottom: 0.875rem;
+  }
+
+  .job-requirements__location {
+    margin-bottom: 0;
+  }
+
+  .job-requirements__apply-btn {
+    margin-bottom: 0;
+    width: 8.8125rem;
+  }
+
+  .job-requirements__requirements {
+    margin-bottom: 1.5rem;
+  }
+
+  .job-requirements__requirements-list {
+    margin: 0 0 2.5rem 1rem;
+  }
+
+  /* ROLE */
+  .job-requirements__role {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (min-width: 90rem) {
+  .specification-section {
+    width: 45.625rem;
+    margin: -12.1875rem auto 3.3125rem;
+  }
+
+  .website-card__company-website-btn {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .website-card__company-website-btn:hover {
+    background-color: var(--link-btn-hover);
+  }
+}
