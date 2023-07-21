@@ -46,7 +46,7 @@ input::placeholder {
   opacity: 0.5;
 }
 
-button {
+.blueBtn {
   display: block;
   font-size: 1rem;
   font-weight: 700;
@@ -57,7 +57,7 @@ button {
   transition: all 0.3s ease-in-out;
 }
 
-button:hover {
+.blueBtn:hover {
   background: #939bf4;
 }
 

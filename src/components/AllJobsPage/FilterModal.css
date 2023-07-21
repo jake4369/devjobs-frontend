@@ -13,6 +13,8 @@
 }
 
 .filter-modal {
+  position: absolute;
+  top: 14.0625rem;
   background: var(--background-component);
   border-radius: 0.375rem;
   display: flex;
@@ -47,7 +49,7 @@
   background-repeat: no-repeat;
 }
 
-.filter-modal .search-btn {
+.search-btn__filter {
   padding: 1rem 0;
   width: 85.3211009174%;
   margin: 0 auto;
