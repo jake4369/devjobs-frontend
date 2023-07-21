@@ -22,11 +22,7 @@ const App = () => {
 
   return (
     <main>
-      <Header
-        setShowModal={setShowModal}
-        searchObject={searchObject}
-        setSearchObject={setSearchObject}
-      />
+      <Header setShowModal={setShowModal} setSearchObject={setSearchObject} />
 
       <Routes>
         <Route path="/" element={<Login />} />
@@ -37,6 +33,7 @@ const App = () => {
               showModal={showModal}
               setShowModal={setShowModal}
               jobsData={jobsData}
+              setSearchObject={setSearchObject}
             />
           }
         />
