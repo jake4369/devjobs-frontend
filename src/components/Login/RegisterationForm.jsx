@@ -1,5 +1,7 @@
 import { signUp } from "./../../utils/api";
 
+import BlueButton from "../Shared/BlueButton";
+
 const RegisterationForm = ({ registrationDetails, setRegistrationDetails }) => {
   const handleChange = (e) => {
     setRegistrationDetails((prevState) => {
@@ -108,7 +110,7 @@ const RegisterationForm = ({ registrationDetails, setRegistrationDetails }) => {
         </select>
       </label>
 
-      <button className="register-btn">Register</button>
+      <BlueButton btnClass="register-btn">Register</BlueButton>
     </form>
   );
 };

@@ -1,5 +1,7 @@
 import { login } from "./../../utils/api";
 
+import BlueButton from "../Shared/BlueButton";
+
 const LoginForm = ({ loginDetails, setLoginDetails, setRegister }) => {
   const handleChange = (e) => {
     setLoginDetails((prevState) => {
@@ -59,7 +61,7 @@ const LoginForm = ({ loginDetails, setLoginDetails, setRegister }) => {
         />
       </label>
 
-      <button className="login-btn">Log In</button>
+      <BlueButton btnClass="login-btn">Login In</BlueButton>
 
       <span>
         Don't have an account? Register{" "}
