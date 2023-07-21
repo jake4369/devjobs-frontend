@@ -44,7 +44,7 @@ const FilterModal = ({ setShowModal, setSearchObject }) => {
       contract: "",
     });
 
-    document.querySelector('input[type="checkbox"]').checked = false;
+    setIsCheckboxChecked(false);
 
     setShowModal(false);
   };

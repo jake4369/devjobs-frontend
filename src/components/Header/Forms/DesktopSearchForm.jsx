@@ -59,7 +59,7 @@ const DesktopSearchForm = ({ setSearchObject }) => {
       contract: "",
     });
 
-    document.querySelector('input[type="checkbox"]').checked = false;
+    setIsCheckboxChecked(false);
   };
 
   return (
