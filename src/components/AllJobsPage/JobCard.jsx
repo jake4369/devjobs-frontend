@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import ovalIcon from "./../../assets/Oval.png";
 
 const JobCard = ({ job }) => {
@@ -11,7 +13,9 @@ const JobCard = ({ job }) => {
         <span className="job-card__contract">{job.contract}</span>
       </div>
 
-      <h2 className="job-card__position">{job.position}</h2>
+      <Link to={`/jobs/${job._id}`}>
+        <h2 className="job-card__position">{job.position}</h2>
+      </Link>
 
       <p className="job-card__company-name">{job.company}</p>
 
