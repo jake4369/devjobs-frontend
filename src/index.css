@@ -3,6 +3,7 @@
 @import url("./components/Login/Login.css");
 @import url("./components/AllJobsPage/FilterModal.css");
 @import url("./components/AllJobsPage/AllJobsPage.css");
+@import url("./components/JobSpecificationPage/jobSpecification.css");
 
 :root {
   --text-input: #19202d;
@@ -12,6 +13,8 @@
   --text-blue: #5964e0;
   --background-main: #f4f6f8;
   --background-component: #fff;
+  --link-btn-text: #5964e0;
+  --link-btn-hover: #c5c9f4;
 }
 
 .dark-mode {
@@ -20,12 +23,18 @@
   --text-bold: #fff;
   --background-main: #121721;
   --background-component: #19202d;
+  --link-btn-text: #fff;
+  --link-btn-hover: #525861;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 input,
