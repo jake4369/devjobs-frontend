@@ -20,8 +20,8 @@ export const getAllJobs = async ({ search, location, contract }) => {
     let url;
 
     url =
-      search || location
-        ? `/jobs?search=${search}&location=${location}`
+      search || location || contract
+        ? `/jobs?search=${search}&location=${location}&contract=${contract}`
         : "/jobs";
 
     const response = await devjobsApi.get(url, { headers });
