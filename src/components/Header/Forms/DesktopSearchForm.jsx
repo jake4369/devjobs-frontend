@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
+import { useFormContext } from "../../../context/FormContext";
+
+import BlueButton from "../../Shared/BlueButton";
 
 import searchIcon from "./../../../assets/desktop/icon-search.svg";
 import locationIcon from "./../../../assets/desktop/icon-location.svg";
 
-const DesktopSearchForm = ({ searchObject, setSearchObject }) => {
+const DesktopSearchForm = ({ setSearchObject }) => {
+  const { userSearch, setUserSearch, isCheckboxChecked, setIsCheckboxChecked } =
+    useFormContext();
   const [isTablet, setIsTablet] = useState(true);
-  const [userSearch, setUserSearch] = useState({
-    search: "",
-    location: "",
-    contract: "",
-  });
 
   useEffect(() => {
     const handleResize = () => {
@@ -37,6 +37,17 @@ const DesktopSearchForm = ({ searchObject, setSearchObject }) => {
     });
   };
 
+  const handleCheckboxChange = (e) => {
+    const isChecked = e.target.checked;
+    setIsCheckboxChecked(isChecked);
+    setUserSearch((prevState) => {
+      return {
+        ...prevState,
+        contract: isChecked ? "full time" : "",
+      };
+    });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -47,6 +58,8 @@ const DesktopSearchForm = ({ searchObject, setSearchObject }) => {
       location: "",
       contract: "",
     });
+
+    document.querySelector('input[type="checkbox"]').checked = false;
   };
 
   return (
@@ -86,12 +99,17 @@ const DesktopSearchForm = ({ searchObject, setSearchObject }) => {
       </div>
       <div className="btn-container">
         <label className="checkbox-container">
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            name="contract"
+            checked={isCheckboxChecked}
+            onChange={handleCheckboxChange}
+          />
           <span className="checkmark"></span>
           Full Time
         </label>
 
-        <button className="search-btn">Search</button>
+        <BlueButton btnClass="search-btn__desktop">Search</BlueButton>
       </div>
     </form>
   );
