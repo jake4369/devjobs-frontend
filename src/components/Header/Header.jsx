@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom";
 
 import MobileSearchForm from "./Forms/MobileSearchForm";
 import DesktopSearchForm from "./Forms/DesktopSearchForm";
-import WebsiteCard from "../JobSpecifiationPage/WebsiteCard";
 
 const ModeSwitch = () => {
   return <div className="header__mode-switch__container">Mode</div>;
