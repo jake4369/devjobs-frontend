@@ -1,6 +1,10 @@
-const BlueButton = ({ children, btnClass, ariaLabel }) => {
+const BlueButton = ({ children, btnClass, ariaLabel, handleClick }) => {
   return (
-    <button className={`blueBtn ${btnClass}`} aria-label={ariaLabel}>
+    <button
+      className={`blueBtn ${btnClass}`}
+      aria-label={ariaLabel}
+      onClick={handleClick}
+    >
       {children}
     </button>
   );
