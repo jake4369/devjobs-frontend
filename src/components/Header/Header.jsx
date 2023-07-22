@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useIsMobileContext } from "../../context/IsMobile";
+import logo from "./../../assets/logos/devjobs.png";
 
 import MobileSearchForm from "./Forms/MobileSearchForm";
 import DesktopSearchForm from "./Forms/DesktopSearchForm";
@@ -19,7 +20,7 @@ const Header = ({ setShowModal, setSearchObject }) => {
 
   return (
     <header>
-      <img src="" alt="" className="header__logo" />
+      <img src={logo} alt="" className="header__logo" />
 
       <ModeSwitch />
 
