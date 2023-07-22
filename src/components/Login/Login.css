@@ -1,27 +1,41 @@
 .login-page {
-  padding: 0 2rem;
-  margin-top: -5rem;
+  margin-top: 8.125rem;
+  position: relative;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 1.25rem;
   text-align: center;
   color: var(--text-bold);
-  max-width: 25rem;
-  margin: 0 auto 2rem auto;
+  position: absolute;
+  top: -9.3125rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--background-component);
+  border-radius: 0.375rem;
+  padding: 3rem 0;
+  width: 87.2%;
+  max-width: 23.4375rem;
 }
 
 .login-form,
-.registration-form {
+.registration-form,
+.user-registration-form,
+.company-registration-form {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   width: 87.2%;
-  max-width: 21.875rem;
+  max-width: 23.4375rem;
   background-color: var(--background-component);
   border-radius: 0.3125rem;
   margin: 0 auto 4rem auto;
   padding: 1.75rem 1.5rem;
+}
+
+.user-registration-form,
+.company-registration-form {
+  margin-bottom: 0;
 }
 
 .login-form label,
@@ -39,7 +53,8 @@ h1 {
 }
 
 .login-btn,
-.register-btn {
+.register-btn,
+.continue-btn {
   padding: 0.6875rem 0;
 }
 
@@ -61,30 +76,28 @@ select {
 }
 
 @media (min-width: 48rem) {
-  h1 {
-    max-width: 31.25rem;
-    font-size: 3rem;
-    margin-bottom: 2.5rem;
+  .login-page {
+    margin-top: 8.25rem;
   }
 
-  .login-form {
-    max-width: 34.375rem;
-    padding: 2rem;
+  h1 {
+    font-size: 2rem;
+    top: -10.75rem;
+    width: 89.7135416667%;
+    max-width: 45.625rem;
+  }
+
+  .login-form,
+  .registration-form,
+  .user-registration-form,
+  .company-registration-form {
+    width: 89.7135416667%;
+    max-width: 45.625rem;
+    padding: 1.5rem;
   }
 
   .login-form span {
     font-size: 0.875rem;
     margin: 0 auto;
-  }
-}
-
-@media (min-width: 90rem) {
-  .login-page {
-    margin-top: -7rem;
-  }
-
-  h1 {
-    font-size: 3.25rem;
-    margin-bottom: 2.5rem;
   }
 }
