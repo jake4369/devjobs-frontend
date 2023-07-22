@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import { getJobById } from "../utils/api";
+// import { getJobById } from "../utils/api";
 
 import WebsiteCard from "../components/JobSpecificationPage/WebsiteCard";
 import JobRequirements from "../components/JobSpecificationPage/JobRequirements";
+import Footer from "../components/JobSpecificationPage/Footer";
 
 const JobSpecification = ({ jobsData }) => {
   const { jobId } = useParams();
@@ -20,14 +21,15 @@ const JobSpecification = ({ jobsData }) => {
 
   return (
     <div className="specification-page">
-      <section className="specification-section">
-        <WebsiteCard
-          company={jobRequirements.company}
-          website={jobRequirements.website}
-        />
+      <WebsiteCard
+        company={jobRequirements.company}
+        website={jobRequirements.website}
+      />
 
+      <section className="specification-section">
         <JobRequirements requirements={jobRequirements} />
       </section>
+      <Footer jobRequirements={jobRequirements} />
     </div>
   );
 };
