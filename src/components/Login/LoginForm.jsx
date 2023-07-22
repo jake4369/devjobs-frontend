@@ -61,7 +61,7 @@ const LoginForm = ({ loginDetails, setLoginDetails, setRegister }) => {
         />
       </label>
 
-      <BlueButton btnClass="login-btn">Login In</BlueButton>
+      <BlueButton btnClass="login-btn">Log In</BlueButton>
 
       <span>
         Don't have an account? Register{" "}
