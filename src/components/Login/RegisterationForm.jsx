@@ -1,5 +1,7 @@
 import { signUp } from "./../../utils/api";
 
+import UserRegistrationForm from "./UserRegistrationForm";
+import CompanyRegistrationForm from "./CompanyRegistrationForm";
 import BlueButton from "../Shared/BlueButton";
 
 const RegisterationForm = ({ registrationDetails, setRegistrationDetails }) => {
@@ -8,6 +10,28 @@ const RegisterationForm = ({ registrationDetails, setRegistrationDetails }) => {
       return {
         ...prevState,
         [e.target.name]: e.target.value,
+      };
+    });
+  };
+
+  // const handleContinueBtnClick = (e) => {
+  //   e.preventDefault();
+
+  //   setRegistrationDetails((prevState) => {
+  //     return {
+  //       ...prevState,
+  //       role: e.target.value,
+  //     };
+  //   });
+  // };
+
+  const handleContinueBtnClick = (e, role) => {
+    e.preventDefault();
+
+    setRegistrationDetails((prevState) => {
+      return {
+        ...prevState,
+        role: role,
       };
     });
   };
@@ -51,66 +75,34 @@ const RegisterationForm = ({ registrationDetails, setRegistrationDetails }) => {
 
   return (
     <form className="registration-form" onSubmit={handleSubmit}>
-      <label>
-        Name:
-        <input
-          type="text"
-          placeholder="Full name"
-          name="name"
-          value={registrationDetails.name}
-          onChange={handleChange}
+      {registrationDetails.role === "" ? (
+        <>
+          <label>
+            Are you here to:
+            <select
+              name="role"
+              value={registrationDetails.role}
+              onChange={handleChange}
+            >
+              <option value="" disabled>
+                ---
+              </option>
+              <option value="user">Find a job</option>
+              <option value="employer">Hire employees</option>
+            </select>
+          </label>
+        </>
+      ) : registrationDetails.role === "user" ? (
+        <UserRegistrationForm
+          registrationDetails={registrationDetails}
+          handleChange={handleChange}
         />
-      </label>
-
-      <label>
-        Email:
-        <input
-          type="email"
-          placeholder="example@gmail.com"
-          name="email"
-          value={registrationDetails.email}
-          onChange={handleChange}
+      ) : (
+        <CompanyRegistrationForm
+          registrationDetails={registrationDetails}
+          handleChange={handleChange}
         />
-      </label>
-
-      <label>
-        Password:
-        <input
-          type="password"
-          placeholder="Password"
-          name="password"
-          value={registrationDetails.password}
-          onChange={handleChange}
-        />
-      </label>
-
-      <label>
-        Confirm password:
-        <input
-          type="password"
-          placeholder="Password"
-          name="passwordConfirm"
-          value={registrationDetails.passwordConfirm}
-          onChange={handleChange}
-        />
-      </label>
-
-      <label>
-        Are you here to:
-        <select
-          name="role"
-          value={registrationDetails.role}
-          onChange={handleChange}
-        >
-          <option value="" disabled>
-            ---
-          </option>
-          <option value="user">Find a job</option>
-          <option value="employer">Hire employees</option>
-        </select>
-      </label>
-
-      <BlueButton btnClass="register-btn">Register</BlueButton>
+      )}
     </form>
   );
 };
