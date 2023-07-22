@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useIsMobileContext } from "../../context/IsMobile";
 
