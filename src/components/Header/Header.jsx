@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useIsMobileContext } from "../../context/IsMobile";
 
 import MobileSearchForm from "./Forms/MobileSearchForm";
 import DesktopSearchForm from "./Forms/DesktopSearchForm";
@@ -9,25 +10,8 @@ const ModeSwitch = () => {
 };
 
 const Header = ({ setShowModal, setSearchObject }) => {
-  const [isMobile, setIsMobile] = useState(false);
+  const { isMobile } = useIsMobileContext();
   const location = useLocation();
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    // Add event listener to track window resize
-    window.addEventListener("resize", handleResize);
-
-    // Initial check on component mount
-    handleResize();
-
-    // Clean up the event listener on component unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   // Check if the URL ends with "/jobs" or "/jobs/:id"
   const isJobsPage =
