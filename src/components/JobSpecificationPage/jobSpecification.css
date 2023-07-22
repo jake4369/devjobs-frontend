@@ -1,13 +1,14 @@
 .specification-section {
   width: 87.2%;
-  max-width: 20.4375rem;
-  position: absolute;
-  left: 50%;
-  margin: -7rem auto 4rem;
-  transform: translateX(-50%);
+  max-width: 23.4375rem;
+  margin: 13.375rem auto 4rem auto;
 }
 
 /* WEBSITE CARD */
+.specification-page {
+  position: relative;
+}
+
 .website-card {
   display: flex;
   flex-direction: column;
@@ -15,8 +16,14 @@
   text-align: center;
   background-color: var(--background-component);
   padding: 3.0625rem 0 2rem;
-  margin-bottom: 1.5rem;
   border-radius: 0.375rem;
+  position: absolute;
+  top: -14.3125rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 87.2%;
+  height: 12.8125rem;
+  max-width: 23.4375rem;
 }
 
 .website-card__company-name {
@@ -133,33 +140,52 @@ li {
   font-weight: 700;
 }
 
-/* ROLE */
+/* ===== ROLE ===== */
 .job-requirements__role {
   margin-bottom: 2rem;
 }
 
+/* ===== FOOTER ===== */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5625rem 6.4%;
+  background-color: var(--background-component);
+  border-radius: 0.375rem;
+}
+
+.footer-btn {
+  display: block;
+  width: 87.2%;
+  max-width: 23.4375rem;
+  padding: 1rem 0;
+}
+
 @media (min-width: 48rem) {
   .specification-section {
-    width: 43.0625rem;
-    max-width: unset;
-    margin: -9.375rem auto 3.3125rem;
+    width: 89.7135416667%;
+    max-width: 45.625rem;
+    margin: 8.25rem auto 3.3125rem auto;
   }
 
   /* WEBSITE CARD */
   .website-card {
     flex-direction: row;
     align-items: center;
-    background-color: var(--background-component);
     padding: 0 2.5rem 0 0;
-    margin-bottom: 2rem;
+    top: -10.75rem;
+    width: 89.7135416667%;
+    max-width: 45.625rem;
     height: 8.75rem;
+    border-radius: 0 0.375rem 0.375rem 0.375rem;
   }
 
   .website-card__img {
     width: 8.75rem;
     height: 8.75rem;
     background: red;
-    border-radius: 0.375rem 0 0 0.375rem;
+    border-radius: 0 0 0 0.375rem;
     position: unset;
     margin-right: 2.5rem;
   }
@@ -214,16 +240,41 @@ li {
     margin: 0 0 2.5rem 1rem;
   }
 
-  /* ROLE */
+  /* ===== ROLE ===== */
   .job-requirements__role {
     margin-bottom: 1.5rem;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    justify-content: space-between;
+    padding: 1.5625rem 5.078125% 1.4375rem;
+  }
+
+  .footer-btn {
+    width: 8.8125rem;
+    max-width: unset;
+  }
+
+  footer h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-bold);
+    margin-bottom: 0.75rem;
+  }
+
+  footer span {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-span);
   }
 }
 
 @media (min-width: 90rem) {
   .specification-section {
     width: 45.625rem;
-    margin: -12.1875rem auto 3.3125rem;
+    max-width: 45.625rem;
+    margin: 8.25rem auto 5rem auto;
   }
 
   .website-card__company-website-btn {
@@ -233,5 +284,15 @@ li {
 
   .website-card__company-website-btn:hover {
     background-color: var(--link-btn-hover);
+  }
+
+  /* ===== ROLE ===== */
+  .job-requirements__role {
+    margin-bottom: 1.5rem;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    padding: 1.4375rem 24.6527777778%;
   }
 }
