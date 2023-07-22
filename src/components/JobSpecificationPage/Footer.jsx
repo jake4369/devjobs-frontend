@@ -2,7 +2,6 @@ import BlueButton from "../Shared/BlueButton";
 import { useIsMobileContext } from "../../context/IsMobile";
 
 const Footer = ({ jobRequirements }) => {
-  console.log(jobRequirements);
   const { isMobile } = useIsMobileContext();
   return (
     <footer>
