@@ -13,7 +13,7 @@ const JobCard = ({ job }) => {
         <span className="job-card__contract">{job.contract}</span>
       </div>
 
-      <Link to={`/jobs/${job._id}`}>
+      <Link to={`/jobs/${job._id}`} onClick={() => window.scroll(0, 0)}>
         <h2 className="job-card__position">{job.position}</h2>
       </Link>
 
